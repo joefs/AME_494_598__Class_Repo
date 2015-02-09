@@ -18,14 +18,15 @@ app.get("/addtodo", function (req, res) {
 	res.end("added");
  });
 
-app.get("/deletetodo", function (req, res){
+
+app.get("/deletetodo", function (req, res) {
 	res.end("delete code here");
 });
 
-app.get("/listtodos", function (req, res){
-	res.end(JSON.stringify(todos));	
-});
 
+app.get("/listtodos", function (req, res) {
+	res.end(JSON.stringify(todos));
+});
 
 
 app.use(methodOverride());
