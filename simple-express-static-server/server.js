@@ -10,12 +10,30 @@ app.get("/", function (req, res) {
   res.redirect("/index.html");
 });
 
+var todos = [];
+
+app.get("/addtodo", function (req, res) {
+	var x = req.query.newtodo;
+	todos[todos.length] = x;
+	res.end("added");
+ });
+
+app.get("/deletetodo", function (req, res){
+	res.end("delete code here");
+});
+
+app.get("/listtodos", function (req, res){
+	res.end(JSON.stringify(todos));	
+});
+
+
+
 app.use(methodOverride());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
 }));
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/client'));
 app.use(errorHandler({
   dumpExceptions: true,
   showStack: true
