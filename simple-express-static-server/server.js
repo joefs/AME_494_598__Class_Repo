@@ -20,7 +20,8 @@ app.get("/addtodo", function (req, res) {
 
 
 app.get("/deletetodo", function (req, res) {
-	res.end("delete code here");
+	todos.splice(req.query.index,1);
+	res.end("deleted");
 });
 
 

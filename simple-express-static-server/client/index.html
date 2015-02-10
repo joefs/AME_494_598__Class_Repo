@@ -94,6 +94,7 @@
    function deleteTodo(index){
 	   var url = "./deletetodo?index=" + encodeURIComponent(index);
 	   var callback = function(data){
+		   //alert(data);
 		   if(data === "deleted"){
 			   updateList();
 		   }
